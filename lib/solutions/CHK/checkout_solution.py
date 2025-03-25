@@ -35,7 +35,7 @@ def checkout(skus):
 
     total = 0
 
-    #loops through each item, applies any offers and calculates the total
+    #loops through each item, applies any offers & calculates the total
 
     for item in valid_items:
         quantity = counter[item]
@@ -50,3 +50,4 @@ def checkout(skus):
     return total
         
     
+
