@@ -5,8 +5,8 @@
 
 
 def checkout(skus):
-    valid_items = {"A","B","C","D", "E"}
-    prices = {"A":50, "B": 30, "C": 20, "D": 15, "E": 40}
+    valid_items = {"A","B","C","D", "E","F"}
+    prices = {"A":50, "B": 30, "C": 20, "D": 15, "E": 40, "F": 10}
 
     #stores special offers (offer quantity, offer price)
 
@@ -32,6 +32,11 @@ def checkout(skus):
         free_units = counter[item] // req_quantity
         if free_item in counter:
             counter[free_item] = max(0, counter[free_item] - free_units)
+
+    #appliction of => buy N get 1 free offer for F
+    f_count = counter["F"]
+    free_f = f_count // 3
+    counter["F"] = f_count - free_f
 
     total = 0
 
